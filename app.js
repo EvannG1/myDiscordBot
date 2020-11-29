@@ -32,7 +32,9 @@ client.on('message', message => {
                     connection
                         .play(stream)
                         .on('finish', function() {
-                            connection.disconnect()
+                            setTimeout(function() {
+                                connection.disconnect()
+                            }, 300000)
                         })
                     } catch (e) {
                         message.delete()
